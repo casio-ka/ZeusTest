@@ -1,4 +1,4 @@
-package com.amazon.utilities;
+package com.Udemy.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public class ConfigReader {
 
-    // declare Properties object at class level so it can be accessible in static method
+    // declare Properties object at class level, so it can be accessible in static method
     private  static Properties properties = new Properties();
 
     // we want to only load the file once , so we can use static block

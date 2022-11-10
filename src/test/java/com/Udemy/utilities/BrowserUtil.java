@@ -1,4 +1,4 @@
-package com.amazon.utilities;
+package com.Udemy.utilities;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;

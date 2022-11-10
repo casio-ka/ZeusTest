@@ -1,2 +1,5 @@
-package com.Udemy.pages;public class Search {
+package com.Udemy.pages;
+
+public class Search {
+
 }

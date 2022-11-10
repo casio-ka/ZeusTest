@@ -5,14 +5,15 @@ import com.amazon.pages.AmazonSearchBox;
 import com.amazon.utilities.BrowserUtil;
 import com.amazon.utilities.ConfigReader;
 import com.amazon.utilities.TestBase;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 public class AmazonSearchBoxTest extends TestBase {
+    AmazonSearchBox amazonSearchBox;
 
     @Test
-    public void testSearchBox(){
+    public void testSearchBox() {
 
-        AmazonSearchBox amazonSearchBox = new AmazonSearchBox();
+        amazonSearchBox = new AmazonSearchBox();
         AmazonLogin amazonLogin = new AmazonLogin();
 
         String username = ConfigReader.read("username");
@@ -21,14 +22,37 @@ public class AmazonSearchBoxTest extends TestBase {
         amazonSearchBox.goTo();
         amazonLogin.login(username,password);
 
-        BrowserUtil.waitFor(2);
-        amazonSearchBox.searchBoxBeforeClick();
-
         amazonSearchBox.search();
+
+        amazonSearchBox.resultsDisplay();
         BrowserUtil.waitFor(2);
 
-        amazonSearchBox.searchBoxAfterClick();
+        amazonSearchBox.sizeClick();
         BrowserUtil.waitFor(2);
+
+        amazonSearchBox.amazonBasicsClick();
+        BrowserUtil.waitFor(3);
+
+        amazonSearchBox.checkBoxAfterClick();
+        BrowserUtil.waitFor(3);
+
+        amazonSearchBox.sizeCheckBox();
+
+        amazonSearchBox.selectItem();
+        BrowserUtil.waitFor(1);
+
+        amazonSearchBox.addItemToCart();
+
+        amazonSearchBox.clickRejectProtection();
+        BrowserUtil.waitFor(2);
+
+        amazonSearchBox.checkAddedToCart();
+
+        amazonSearchBox.checkout();
+
+        amazonSearchBox.checkOneItem();
+
+
     }
 
 }

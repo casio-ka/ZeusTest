@@ -3,7 +3,7 @@ package com.amazon.tests;
 import com.amazon.pages.AmazonLogin;
 import com.amazon.utilities.ConfigReader;
 import com.amazon.utilities.TestBase;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 public class AmazonLoginTest extends TestBase {
     AmazonLogin amazonLogin;

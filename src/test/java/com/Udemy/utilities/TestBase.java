@@ -1,4 +1,4 @@
-package com.amazon.utilities;
+package com.Udemy.utilities;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

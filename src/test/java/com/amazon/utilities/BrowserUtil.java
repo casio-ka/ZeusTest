@@ -5,12 +5,10 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class BrowserUtil {
 
-    /**
-     * A method to pause the thread certain seconds where necessary
-     * @param seconds
-     */
     public static void waitFor(int seconds){
 
         try {
@@ -22,17 +20,11 @@ public class BrowserUtil {
     }
 
 
-    /**
-     * This method will check for visibility of element within the time given
-     * @param locator By.id or By.xpath or By.whatever
-     * @param timeToWait time to wait
-     * @return true if the element is found within the time and visible , false if not
-     */
-    /*public static boolean checkVisibilityOfElement(By locator , int timeToWait ){
+    public static boolean checkVisibilityOfElement(By locator , int timeToWait ){
 
         boolean result = false ;
 
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver() ,timeToWait ) ;
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver() , Duration.ofSeconds(timeToWait)) ;
 
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated( locator  ));
@@ -45,7 +37,7 @@ public class BrowserUtil {
 
         return result ;
 
-    }*/
+    }
 
 
 }

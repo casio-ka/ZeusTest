@@ -36,15 +36,9 @@ public class Driver {
                     obj = null ;
                     System.out.println("UNKNOWN BROWSER TYPE!!! " + browserName);
             }
-            return obj ;
-
-
-
-        }else{
-//            System.out.println("You have it just use existing one");
-            return obj ;
 
         }
+        return obj ;
 
     }
 
