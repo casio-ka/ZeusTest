@@ -1,4 +1,2 @@
-package com.amazon.utilities;
-
-public class WebDriverFactory {
+package com.amazon.utilities;public class WebDriverFactory {
 }
