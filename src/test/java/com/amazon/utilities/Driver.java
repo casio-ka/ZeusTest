@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.Locale;
+
 public class Driver {
 
     private static WebDriver obj;
@@ -22,7 +24,7 @@ public class Driver {
         if(obj == null){
 
             // according to browser type set up driver correctly
-            switch (browserName ){
+            switch (browserName.toLowerCase()){
                 case "chrome" :
                     WebDriverManager.chromedriver().setup();
                     obj = new ChromeDriver();
@@ -36,6 +38,7 @@ public class Driver {
                     obj = null ;
                     System.out.println("UNKNOWN BROWSER TYPE!!! " + browserName);
             }
+            obj.manage().window().maximize();
 
         }
         return obj ;
@@ -48,11 +51,6 @@ public class Driver {
      */
     public static void closeBrowser(){
 
-        // check if we have WebDriver instance or not
-        // basically checking if obj is null or not
-        // if not null
-        // quit the browser
-        // make it null , because once quit it can not be used
         if(obj != null ){
             obj.quit();
             // so when ask for it again , it gives us not quited fresh driver
